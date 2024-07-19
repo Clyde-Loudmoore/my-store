@@ -1,0 +1,30 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+build
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.vite-ssg-temp
+/public/php/config.php
+/messages
+.env
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+package-lock.json

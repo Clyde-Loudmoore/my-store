@@ -1,0 +1,44 @@
+.catalog-page {
+  margin: 0 auto;
+  padding: 30px 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 240px);
+  justify-content: space-between;
+  row-gap: 30px;
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(3, 312px);
+  }
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 350px);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (max-width: 575px) {
+    padding: 30px 16px;
+  }
+
+  &__filter {
+    max-width: 120px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.1);
+
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 2;
+  }
+
+  &__filter-body:hover {
+    background: #e9f1fd;
+    transition: 0.2s linear;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
