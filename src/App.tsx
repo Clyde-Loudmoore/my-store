@@ -3,9 +3,9 @@ import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import { Routes, Route } from 'react-router-dom';
 
 
-import CatalogPage from './Pages/CatalogPage';
-import CartPage from './Pages/CartPage';
-import Layout from './components/Layout';
+import { CatalogPage } from './Pages/CatalogPage';
+import { CartPage } from './Pages/CartPage';
+import Layout from './Layout/Layout';
 
 export const App: FC = () => {
   return (

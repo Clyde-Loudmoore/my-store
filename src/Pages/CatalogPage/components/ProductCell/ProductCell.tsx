@@ -1,18 +1,14 @@
 import { FC, useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 
-import type { TRegularPrice } from '../../types/productType';
+import { BUY } from './constants';
+
+import type { TProduct, TRegularPrice } from '../../../../types/productType';
 
 import './styles.scss';
 
 type TProps = {
-  type: string,
-  id: number,
-  sku: string,
-  title: string,
-  price: TRegularPrice,
-  imagePath: string,
-  brand: number,
+  product: TProduct;
   onHandleClick: (
     type: string,
     id: number,
@@ -24,27 +20,16 @@ type TProps = {
   ) => void;
 }
 
-const ProductCell: FC<TProps> = (
-  {
-    type,
-    id,
-    sku,
-    title,
-    price,
-    imagePath,
-    brand,
-    onHandleClick,
-  }
-) => {
+const ProductCell: FC<TProps> = ({ product, onHandleClick }) => {
   const [disabledButton, setDisabledButton] = useState(false);
 
   return (
     <Card className='product-cell'>
-      <Card.Img variant="top" src={imagePath} />
+      <Card.Img variant="top" src={product.image} />
       <Card.Body className='product-cell__body'>
-        <Card.Title className='product-cell__title'>{title}</Card.Title>
+        <Card.Title className='product-cell__title'>{product.title}</Card.Title>
         <Card.Text className='product-cell__price'>
-          {price.value} {price.currency}
+          {product.regular_price.value} {product.regular_price.currency}
         </Card.Text>
         <Button
           variant={disabledButton ? 'secondary' : 'outline-success'}
@@ -53,19 +38,19 @@ const ProductCell: FC<TProps> = (
           onClick={
             () => {
               onHandleClick(
-                type,
-                id,
-                sku,
-                title,
-                price,
-                imagePath,
-                brand
+                product.type,
+                product.id,
+                product.sku,
+                product.title,
+                product.regular_price,
+                product.image,
+                product.brand
               );
               setDisabledButton(true);
             }
           }
         >
-          Buy
+          {BUY}
         </Button>
       </Card.Body>
     </Card>

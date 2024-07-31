@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import { useAppSelector } from '../../store/hooks';
+import { useAppSelector } from '../../../store/hooks';
 
 import Logo from './images/logo.png';
 import Cart from './images/icon-basket.png'
