@@ -1,0 +1,1 @@
+export type { TRegularPrice, TProduct } from './productType';

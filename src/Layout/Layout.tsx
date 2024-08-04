@@ -1,15 +1,13 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Header from './components/Header';
+import { Header } from './components/Header';
 
-const Layout: FC = () => {
-  return (
-    <>
-      <Header />
-      <Outlet />
-    </>
-  );
-}
+const Layout: FC = () => (
+  <>
+    <Header />
+    <Outlet />
+  </>
+);
 
 export default Layout;
