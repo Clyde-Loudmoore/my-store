@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import Logo from './images/logo.png';
+import Logo from './images/logo-black.png';
 
 import './styles.scss';
 

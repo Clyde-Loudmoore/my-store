@@ -1,1 +1,7 @@
-export type { TRegularPrice, TProduct } from './productType';
+export type {
+  TCharactersInfo,
+  TCharacterOriginData,
+  TCharacterLocationData,
+  TCharacterResultData,
+  TAllCharacters
+} from './characterType';
