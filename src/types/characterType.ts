@@ -1,3 +1,5 @@
+type Maybe<T> = NonNullable<T> | undefined;
+
 export type TCharactersInfo = {
   count: number;
   pages: number;
@@ -6,30 +8,41 @@ export type TCharactersInfo = {
 }
 
 export type TCharacterOriginData = {
-  name: string;
-  url: string;
-}
+  name: Maybe<string>;
+  dimension: Maybe<string>;
+} | null;
+
 export type TCharacterLocationData = {
-  name: string;
-  url: string;
-}
+  name: Maybe<string>;
+  id: Maybe<string>;
+} | null;
+
+export type TCharacterEpisodeData = {
+  id: Maybe<string>;
+} | null;
 
 export type TCharacterResultData = {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: TCharacterOriginData;
-  location: TCharacterLocationData;
-  image: string;
-  episode: string[];
-  url: string;
-  created: string;
+  id?: Maybe<string>;
+  name?: Maybe<string>;
+  status?: Maybe<string>;
+  species?: Maybe<string>;
+  type?: Maybe<string>;
+  gender?: Maybe<string>;
+  image?: Maybe<string>;
+  created?: Maybe<string>;
+  origin?: {
+    name?: Maybe<string>;
+    dimension?: Maybe<string>;
+  } | null;
+  location?: {
+    name?: Maybe<string>;
+    id?: Maybe<string>;
+  } | null;
+  episode: Array<{
+    id?: Maybe<string>;
+  } | null>;
 }
 
 export type TAllCharacters = {
-  info: TCharactersInfo | null;
-  results: TCharacterResultData[];
+  results?: TCharacterResultData[] | null;
 }

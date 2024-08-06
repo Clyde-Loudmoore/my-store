@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import { Routes, Route } from 'react-router-dom';
 
-import { CatalogPage } from './Pages/CatalogPage';
+import { CharactersPage } from './Pages/CharactersPage';
 import Layout from './Layout/Layout';
 
 export const App: FC = () => (
@@ -12,7 +12,7 @@ export const App: FC = () => (
     >
       <Routes>
         <Route path='/' element={<Layout />} >
-          <Route index element={<CatalogPage />} />
+          <Route index element={<CharactersPage />} />
         </Route>
       </Routes>
     </ThemeProvider>
